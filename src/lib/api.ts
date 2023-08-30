@@ -31,3 +31,5 @@ export function getSortedPostsData(): PostData[] {
 }
 
 export const allPostsData = getSortedPostsData();
+
+export const allPostsLength = allPostsData.length;

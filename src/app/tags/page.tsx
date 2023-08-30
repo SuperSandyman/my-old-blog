@@ -13,7 +13,6 @@ const TagsPage = async () => {
                 <TagList />
             </div>
             <div className="col-span-9 lg:col-span-3 m-4"></div>
-            <Paginate />
         </div>
     );
 };

@@ -1,12 +1,12 @@
 import Link from "next/link";
-import Image from "next/image";
+
 import { FaYoutube, FaTwitter, FaGithub } from "react-icons/fa";
 
 export const Profile = () => {
     return (
         <div className="bg-white p-4 rounded-lg border-b-2">
             <div className="text-center">
-                <Image
+                <img
                     src="/static/author.webp"
                     alt="Sandyマンのうまのアイコン"
                     width={75}

@@ -3,9 +3,27 @@ import markdownToReact from "@/lib/markdownToReact";
 import { Twemoji } from "react-emoji-render";
 import Link from "next/link";
 import { format, parseISO } from "date-fns";
+import { allPostsData } from "@/lib/api";
+
+export const generateStaticParams = () => {
+    return allPostsData.map((post) => {
+        return {
+            slug: post.id,
+        };
+    });
+};
+
+// console.log(
+//     allPostsData.map((post) => {
+//         return {
+//             slug: post.id,
+//         };
+//     })
+// );
 
 const PostPage = async ({ params }: { params: { slug: string } }) => {
-    const post = await getPostById(params.slug);
+    const { slug } = params;
+    const post = await getPostById(slug);
 
     const content = await markdownToReact(post.content, post.id);
 

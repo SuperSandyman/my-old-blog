@@ -22,9 +22,11 @@ export const PostList = ({ post }: { post: PostData }) => {
                         <time className="my-2 text-gray-700 text-[14px] font-semibold pr-2">
                             {format(parseISO(post.date), "yyyy.MM.dd")}
                         </time>
-                        <span className="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded hover:bg-blue-200">
-                            {post.categories}
-                        </span>
+                        <Link href={`/categories/${post.categories}`}>
+                            <span className="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded hover:bg-blue-200">
+                                {post.categories}
+                            </span>
+                        </Link>
                     </div>
                 </div>
             </div>

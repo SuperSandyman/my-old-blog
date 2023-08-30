@@ -1,8 +1,10 @@
 import { allPostsData } from "@/lib/api";
 import { PostList } from "@/components/PostList";
+import { Paginate } from "@/components/Paginate";
 
 const TagPage = ({ params }: { params: { tags: string } }) => {
-    const decodedTags = decodeURIComponent(params.tags);
+    const { tags } = params;
+    const decodedTags = decodeURIComponent(tags);
 
     const filteredPosts = allPostsData.filter((post) => {
         return post.tags.includes(decodedTags);
@@ -21,6 +23,7 @@ const TagPage = ({ params }: { params: { tags: string } }) => {
                 {filteredPosts.map((post) => {
                     return <PostList post={post} key={post.id} />;
                 })}
+                <Paginate totalCount={filteredPosts.length} currentPage={undefined} />
             </div>
         </div>
     );

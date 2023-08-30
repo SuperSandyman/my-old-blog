@@ -3,7 +3,7 @@ import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import rehypeReact from "rehype-react";
 import { createElement, Fragment } from "react";
-import PostImage from "@/components/PostImage";
+import Postimg from "@/components/PostImage";
 import remarkGfm from "remark-gfm";
 import rehypePrism from "rehype-prism-plus";
 
@@ -18,7 +18,7 @@ const markdownToReact = async (markdown: string, id: string) => {
                 createElement,
                 Fragment,
                 components: {
-                    img: PostImage(id),
+                    img: Postimg(id),
                 },
             })
             .process(markdown)
