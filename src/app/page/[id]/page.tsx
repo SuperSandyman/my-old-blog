@@ -3,6 +3,18 @@ import { PostList } from "@/components/PostList";
 import { Profile } from "@/components/Profile";
 import { Paginate } from "@/components/Paginate";
 
+export const generateStaticParams = () => {
+    const PER_PAGE = 8;
+
+    const range = (start, end) => [...Array(end - start + 1)].map((_, i) => start + i);
+
+    return range(1, Math.ceil(allPostsLength / PER_PAGE)).map((id) => {
+        return {
+            id: id.toString(),
+        };
+    });
+};
+
 const Page = ({ params }: { params: { id: number } }) => {
     const PER_PAGE = 8;
 

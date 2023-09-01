@@ -1,6 +1,15 @@
 import { allPostsData } from "@/lib/api";
 import { PostList } from "@/components/PostList";
 
+export const generateStaticParams = () => {
+    const categories = Array.from(new Set(allPostsData.flatMap((post) => post.categories)));
+    return categories.map((category) => {
+        return {
+            categories: category,
+        };
+    });
+};
+
 const CategoriesPage = ({ params }: { params: { categories: string } }) => {
     const decodedCategories = decodeURIComponent(params.categories);
 

@@ -2,6 +2,15 @@ import { allPostsData } from "@/lib/api";
 import { PostList } from "@/components/PostList";
 import { Paginate } from "@/components/Paginate";
 
+export const generateStaticParams = () => {
+    const tags = Array.from(new Set(allPostsData.flatMap((post) => post.tags)));
+    return tags.map((tag) => {
+        return {
+            tags: tag,
+        };
+    });
+};
+
 const TagPage = ({ params }: { params: { tags: string } }) => {
     const { tags } = params;
     const decodedTags = decodeURIComponent(tags);
