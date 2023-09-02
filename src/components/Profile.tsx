@@ -21,17 +21,20 @@ export const Profile = () => {
             </p>
             <div className="px-4 py-2 flex justify-center">
                 <div className="pr-4">
-                    <Link href="https://twitter.com/sandyman_blog">
+                    <Link href="https://twitter.com/sandyman_blog" aria-label="Twitter（@sandyman_blog）へのリンクです">
                         <FaTwitter className="text-blue-500 h-5 w-5" />
                     </Link>
                 </div>
                 <div className="pr-4">
-                    <Link href="https://www.youtube.com/@sandyman_linux">
+                    <Link
+                        href="https://www.youtube.com/@sandyman_linux"
+                        aria-label="Youtube（SandyマンのPC部）へのリンクです"
+                    >
                         <FaYoutube className="text-red-500 h-5 w-5" />
                     </Link>
                 </div>
                 <div className="pr-4">
-                    <Link href="https://github.com/SuperSandyman">
+                    <Link href="https://github.com/SuperSandyman" aria-label="SandyマンのGitHubへのリンクです">
                         <FaGithub className="text-gray-900 h-5 w-5" />
                     </Link>
                 </div>
