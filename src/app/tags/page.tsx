@@ -1,7 +1,4 @@
-import Link from "next/link";
-import { getSortedPostsData } from "@/lib/api";
 import { TagList } from "@/components/TagList";
-import { Paginate } from "@/components/Paginate";
 
 const TagsPage = async () => {
     return (
