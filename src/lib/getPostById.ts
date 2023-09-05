@@ -1,6 +1,4 @@
-import { getSortedPostsData } from "./api";
-
-const allPostsData = getSortedPostsData();
+import { allPostsData } from "./api";
 
 export const getPostById = (id: string) => {
     return allPostsData.find((post) => post.id === id);

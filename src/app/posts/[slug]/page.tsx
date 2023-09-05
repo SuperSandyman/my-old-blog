@@ -5,7 +5,7 @@ import Link from "next/link";
 import { format, parseISO } from "date-fns";
 import { allPostsData } from "@/lib/api";
 
-export const generateStaticParams = () => {
+export const generateStaticParams = async () => {
     return allPostsData.map((post) => {
         return {
             slug: post.id,
@@ -13,23 +13,19 @@ export const generateStaticParams = () => {
     });
 };
 
-// console.log(
-//     allPostsData.map((post) => {
-//         return {
-//             slug: post.id,
-//         };
-//     })
-// );
-
 const PostPage = async ({ params }: { params: { slug: string } }) => {
     const { slug } = params;
     const post = await getPostById(slug);
+
+    if (!post) {
+        return <div className="font-extrabold text-4xl p-20">{"404でござる:)"}</div>;
+    }
 
     const content = await markdownToReact(post.content, post.id);
 
     return (
         <div className="grid grid-cols-10 lg:gap-4">
-            <div className="col-span-10 lg:col-span-7 px-4">
+            <div className="col-span-10 lg:col-span-7">
                 <div className="mt-2 pb-4 text-gray-600 text-sm">
                     <Link href="/" className="hover:underline">
                         ホーム
