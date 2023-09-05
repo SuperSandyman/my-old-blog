@@ -4,7 +4,6 @@ import { Noto_Sans_JP } from "next/font/google";
 
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { notEqual } from "assert";
 
 const noto = Noto_Sans_JP({
     weight: ["400", "700"],
@@ -22,7 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <html lang="ja">
             <body className={noto.className}>
                 <div className="flex flex-col min-h-screen">
-                    <header className="w-max-full shadow-sm bg-white bg-opacity-90 lg:sticky lg:top-0">
+                    <header className="w-max-full shadow-sm bg-white">
                         <Header />
                     </header>
                     <div className="container max-w-7xl mx-auto pb-4">
