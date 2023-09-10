@@ -8,11 +8,11 @@ export const generateStaticParams = () => {
 
     const range = (start, end) => [...Array(end - start + 1)].map((_, i) => start + i);
 
-    return range(1, Math.ceil(allPostsLength / PER_PAGE)).map((id) => {
-        return {
+    return range(1, Math.ceil(allPostsLength / PER_PAGE))
+        .filter((id) => id !== 1) // 1以外の値だけを抽出
+        .map((id) => ({
             id: id.toString(),
-        };
-    });
+        }));
 };
 
 const Page = ({ params }: { params: { id: number } }) => {

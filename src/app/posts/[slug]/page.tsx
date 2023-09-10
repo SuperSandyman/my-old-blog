@@ -1,9 +1,14 @@
 import { getPostById } from "@/lib/getPostById";
+import { Metadata } from "next";
 import markdownToReact from "@/lib/markdownToReact";
 import { Twemoji } from "react-emoji-render";
 import Link from "next/link";
 import { format, parseISO } from "date-fns";
 import { allPostsData } from "@/lib/api";
+import urlJoin from "url-join";
+import { Toc } from "@/components/Toc";
+
+const baseURL = process.env.BASE_URL || "";
 
 export const generateStaticParams = async () => {
     return allPostsData.map((post) => {
@@ -12,6 +17,36 @@ export const generateStaticParams = async () => {
         };
     });
 };
+
+export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
+    const { slug } = params;
+    const post = getPostById(slug);
+    if (!post) {
+        return {
+            title: "404 notfound でござる:)",
+        };
+    }
+
+    return {
+        title: post.title + " | Sandyマンのブログ",
+        description: post.content.substring(0, 80),
+        openGraph: {
+            url: urlJoin(baseURL, "/posts/", post.id),
+            title: post.title + " | Sandyマンのブログ",
+            description: post.content.substring(0, 80),
+            type: "article",
+            locale: "ja_JP",
+            images: "/opengraph-image.png",
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: post.title + " | Sandyマンのブログ",
+            description: post.content.substring(0, 80),
+            site: "@sandyman_blog",
+            creator: "@sandyman_linux",
+        },
+    };
+}
 
 const PostPage = async ({ params }: { params: { slug: string } }) => {
     const { slug } = params;
@@ -62,8 +97,10 @@ const PostPage = async ({ params }: { params: { slug: string } }) => {
                             })}
                     </div>
                 </div>
-
-                <article className="prose border-t-2 pt-8">{content}</article>
+                <article className="prose border-t-2 pt-8 mb-20">{content}</article>
+            </div>
+            <div className="col-span-10 lg:col-span-3 ml-2">
+                <Toc />
             </div>
         </div>
     );

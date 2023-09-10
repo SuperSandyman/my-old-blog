@@ -1,6 +1,7 @@
 import { allPostsData } from "@/lib/api";
 import { PostList } from "@/components/PostList";
 import { Paginate } from "@/components/Paginate";
+import { Metadata } from "next";
 
 export const generateStaticParams = () => {
     const tags = Array.from(new Set(allPostsData.flatMap((post) => post.tags)));
@@ -10,6 +11,31 @@ export const generateStaticParams = () => {
         };
     });
 };
+
+export function generateMetadata({ params }: { params: { tags: string } }): Metadata {
+    const { tags } = params;
+
+    const decodedTags = decodeURIComponent(tags);
+
+    return {
+        title: decodedTags + " | Sandyマンのブログ",
+        description: decodedTags + "についての記事一覧",
+        openGraph: {
+            title: decodedTags + " | Sandyマンのブログ",
+            description: decodedTags + "についての記事一覧",
+            type: "website",
+            locale: "ja_JP",
+            images: "/opengraph-image.png",
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: decodedTags + " | Sandyマンのブログ",
+            description: decodedTags + "についての記事一覧",
+            site: "@sandyman_blog",
+            creator: "@sandyman_linux",
+        },
+    };
+}
 
 const TagPage = ({ params }: { params: { tags: string } }) => {
     const { tags } = params;

@@ -6,6 +6,7 @@ import { createElement, Fragment } from "react";
 import Postimg from "@/components/PostImage";
 import remarkGfm from "remark-gfm";
 import rehypePrism from "rehype-prism-plus";
+import rehypeSlug from "rehype-slug";
 
 const markdownToReact = async (markdown: string, id: string) => {
     const result = (
@@ -14,6 +15,7 @@ const markdownToReact = async (markdown: string, id: string) => {
             .use(remarkGfm)
             .use(remarkRehype)
             .use(rehypePrism)
+            .use(rehypeSlug)
             .use(rehypeReact, {
                 createElement,
                 Fragment,

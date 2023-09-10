@@ -5,6 +5,8 @@ import { Noto_Sans_JP } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
+const baseURL = process.env.NEXT_PUBLIC_BASE_URL;
+
 const noto = Noto_Sans_JP({
     weight: ["400", "700"],
     style: "normal",
@@ -14,6 +16,21 @@ const noto = Noto_Sans_JP({
 export const metadata: Metadata = {
     title: "Sandyマンのブログ",
     description: "JavaScriptやLinuxなどいろいろ記事書いてます",
+    openGraph: {
+        url: baseURL,
+        title: "Sandyマンのブログ",
+        description: "JavaScriptやLinuxなどいろいろ記事書いてます",
+        type: "website",
+        locale: "ja_JP",
+        images: "/opengraph-image.png",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Sandyマンのブログ",
+        site: "@sandyman_blog",
+        creator: "@sandyman_linux",
+        description: "JavaScriptやLinuxなどいろいろ記事書いてます",
+    },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

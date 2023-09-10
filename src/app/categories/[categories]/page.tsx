@@ -1,5 +1,6 @@
 import { allPostsData } from "@/lib/api";
 import { PostList } from "@/components/PostList";
+import { Metadata } from "next";
 
 export const generateStaticParams = () => {
     const categories = Array.from(new Set(allPostsData.flatMap((post) => post.categories)));
@@ -9,6 +10,31 @@ export const generateStaticParams = () => {
         };
     });
 };
+
+export function generateMetadata({ params }: { params: { categories: string } }): Metadata {
+    const { categories } = params;
+
+    const decodedCategories = decodeURIComponent(categories);
+
+    return {
+        title: decodedCategories + " | Sandyマンのブログ",
+        description: decodedCategories + "についての記事一覧",
+        openGraph: {
+            title: decodedCategories + " | Sandyマンのブログ",
+            description: decodedCategories + "についての記事一覧",
+            type: "website",
+            locale: "ja_JP",
+            images: "/opengraph-image.png",
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: decodedCategories + " | Sandyマンのブログ",
+            description: decodedCategories + "についての記事一覧",
+            site: "@sandyman_blog",
+            creator: "@sandyman_linux",
+        },
+    };
+}
 
 const CategoriesPage = ({ params }: { params: { categories: string } }) => {
     const decodedCategories = decodeURIComponent(params.categories);

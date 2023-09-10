@@ -2,6 +2,27 @@ import Link from "next/link";
 import { getSortedPostsData } from "@/lib/api";
 import { CategoriesList } from "@/components/CategoriesList";
 
+export const generateMetadata = () => {
+    return {
+        title: "Categories | Sandyマンのブログ",
+        description: "カテゴリー一覧",
+        openGraph: {
+            title: "Categories | Sandyマンのブログ",
+            description: "カテゴリー一覧",
+            type: "website",
+            locale: "ja_JP",
+            images: "/opengraph-image.png",
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: "Categories | Sandyマンのブログ",
+            description: "カテゴリー一覧",
+            site: "@sandyman_blog",
+            creator: "@sandyman_linux",
+        },
+    };
+};
+
 const CategoriesPage = async () => {
     return (
         <div className="grid grid-cols-9 lg:gap-4 pb-4">
