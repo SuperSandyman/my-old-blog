@@ -8,7 +8,9 @@ import { allPostsData } from "@/lib/api";
 import urlJoin from "url-join";
 import { Toc } from "@/components/Toc";
 import { ShareButtons } from "@/components/ShareButtons";
+import { Profile } from "@/components/SideBar/Profile";
 import "@/styles/prism.css";
+import { NextPrevPost } from "@/components/NextPrevPost";
 
 const baseURL = process.env.BASE_URL || "";
 
@@ -110,12 +112,14 @@ const PostPage = async ({ params }: { params: { slug: string } }) => {
                 </div>
                 <div>
                     <article className="prose border-t-2 lg:pt-4 mb-10">{content}</article>
-                    <div className="flex mb-20">
+                    <div className="flex mb-4 border-b-2 pb-8">
                         <ShareButtons title={post.title} slug={post.id} />
                     </div>
+                    <NextPrevPost slug={slug} />
                 </div>
             </div>
             <div className="col-span-10 lg:col-span-3 ml-2">
+                <Profile />
                 <div className="lg:sticky lg:top-0 pt-4 hidden lg:block">
                     <h3 className="font-bold lg:text-2xl text-xl text-gray-900 border-b-2 border-black p-1">目次</h3>
                     <Toc />
