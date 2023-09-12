@@ -9,7 +9,7 @@ export const TagList = async () => {
             {tags.map((tag, index) => (
                 <li className="p-1" key={index}>
                     <Link href={`/tags/` + tag + `/`} itemProp="url">
-                        <button className="px-2 mb-1 mr-0.5 text-gray-900 rounded-lg text-lg">
+                        <button className="px-2 mb-1 mr-0.5 text-gray-900 text-lg hover:underline">
                             <div className="flex">
                                 <span>#{tag}</span>
                             </div>

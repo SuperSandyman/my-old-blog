@@ -1,7 +1,9 @@
 import { allPostsData, allPostsLength } from "@/lib/api";
 import { PostList } from "@/components/PostList";
-import { Profile } from "@/components/Profile";
+import { Profile } from "@/components/SideBar/Profile";
 import { Paginate } from "@/components/Paginate";
+import { TagList } from "@/components/SideBar/TagList";
+import { SideBar } from "@/components/SideBar/SideBar";
 
 const Index = async () => {
     const PER_PAGE = 8;
@@ -23,7 +25,7 @@ const Index = async () => {
                 <Paginate totalCount={allPostsLength} currentPage={1} />
             </div>
             <div className="col-span-9 lg:col-span-3 m-4">
-                <Profile />
+                <SideBar />
             </div>
         </div>
     );

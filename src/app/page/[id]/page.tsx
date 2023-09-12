@@ -1,7 +1,7 @@
 import { allPostsData, allPostsLength } from "@/lib/api";
 import { PostList } from "@/components/PostList";
-import { Profile } from "@/components/Profile";
 import { Paginate } from "@/components/Paginate";
+import { SideBar } from "@/components/SideBar/SideBar";
 
 export const generateStaticParams = () => {
     const PER_PAGE = 8;
@@ -35,7 +35,7 @@ const Page = ({ params }: { params: { id: number } }) => {
                 <Paginate totalCount={allPostsLength} currentPage={params.id} />
             </div>
             <div className="col-span-9 lg:col-span-3 m-4">
-                <Profile />
+                <SideBar />
             </div>
         </div>
     );

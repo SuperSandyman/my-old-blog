@@ -1,6 +1,7 @@
 import { allPostsData } from "@/lib/api";
 import { PostList } from "@/components/PostList";
 import { Metadata } from "next";
+import { SideBar } from "@/components/SideBar/SideBar";
 
 export const generateStaticParams = () => {
     const categories = Array.from(new Set(allPostsData.flatMap((post) => post.categories)));
@@ -56,6 +57,9 @@ const CategoriesPage = ({ params }: { params: { categories: string } }) => {
                 {filteredPosts.map((post) => {
                     return <PostList post={post} key={post.id} />;
                 })}
+            </div>
+            <div className="col-span-9 lg:col-span-3 m-4">
+                <SideBar />
             </div>
         </div>
     );

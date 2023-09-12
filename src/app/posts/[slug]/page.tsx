@@ -109,7 +109,7 @@ const PostPage = async ({ params }: { params: { slug: string } }) => {
                     </div>
                 </div>
                 <div>
-                    <article className="prose border-t-2 pt-8 mb-10">{content}</article>
+                    <article className="prose border-t-2 lg:pt-4 mb-10">{content}</article>
                     <div className="flex mb-20">
                         <ShareButtons title={post.title} slug={post.id} />
                     </div>

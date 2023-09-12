@@ -1,6 +1,5 @@
-import Link from "next/link";
-import { getSortedPostsData } from "@/lib/api";
 import { CategoriesList } from "@/components/CategoriesList";
+import { SideBar } from "@/components/SideBar/SideBar";
 
 export const generateMetadata = () => {
     return {
@@ -32,7 +31,9 @@ const CategoriesPage = async () => {
                 </h1>
                 <CategoriesList />
             </div>
-            <div className="col-span-9 lg:col-span-3 m-4"></div>
+            <div className="col-span-9 lg:col-span-3 m-4">
+                <SideBar />
+            </div>
         </div>
     );
 };

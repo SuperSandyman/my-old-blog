@@ -2,6 +2,7 @@ import { allPostsData } from "@/lib/api";
 import { PostList } from "@/components/PostList";
 import { Paginate } from "@/components/Paginate";
 import { Metadata } from "next";
+import { SideBar } from "@/components/SideBar/SideBar";
 
 export const generateStaticParams = () => {
     const tags = Array.from(new Set(allPostsData.flatMap((post) => post.tags)));
@@ -59,6 +60,9 @@ const TagPage = ({ params }: { params: { tags: string } }) => {
                     return <PostList post={post} key={post.id} />;
                 })}
                 <Paginate totalCount={filteredPosts.length} currentPage={undefined} />
+            </div>
+            <div className="col-span-9 lg:col-span-3 m-4">
+                <SideBar />
             </div>
         </div>
     );

@@ -12,6 +12,7 @@
     },
     "dependencies": {
         "@headlessui/react": "^1.7.16",
+        "@jsdevtools/rehype-toc": "^3.0.2",
         "@next/bundle-analyzer": "^13.4.16",
         "@types/fs-extra": "^11.0.1",
         "@types/node": "20.4.5",

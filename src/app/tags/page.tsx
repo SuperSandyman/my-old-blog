@@ -1,4 +1,5 @@
 import { TagList } from "@/components/TagList";
+import { SideBar } from "@/components/SideBar/SideBar";
 
 export const generateMetadata = () => {
     return {
@@ -30,7 +31,9 @@ const TagsPage = async () => {
                 </h1>
                 <TagList />
             </div>
-            <div className="col-span-9 lg:col-span-3 m-4"></div>
+            <div className="col-span-9 lg:col-span-3 m-4">
+                <SideBar />
+            </div>
         </div>
     );
 };

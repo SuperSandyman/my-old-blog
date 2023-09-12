@@ -36,12 +36,12 @@ export const Paginate = ({ totalCount, currentPage }) => {
                 aria-label={`1から${totalPages}までのページ数を入力すると遷移できます`}
                 value={inputPage}
                 onChange={handleInputPageChange}
-                className="hidden lg:block text-center border-2 border-gray-300 mr-2"
+                className="hidden lg:block text-center border-2 border-gray-300 mr-2 rounded-lg"
                 min="1"
                 max={totalPages}
             />
             <Link href={`/page/` + inputPage} passHref>
-                <button className="lg:text-lg text-md hidden lg:block p-2 bg-gray-900 text-white hover:bg-gray-800">{`${inputPage}ページまで遷移`}</button>
+                <button className="lg:text-lg text-md hidden lg:block p-2 bg-gray-900 text-white hover:bg-gray-800 rounded-lg">{`${inputPage}ページまで遷移`}</button>
             </Link>
             {currentPage < totalPages && (
                 <Link href={`/page/${currentPage + 1}`} className="text-xl p-2 hover:underline">
