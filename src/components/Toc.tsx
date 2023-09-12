@@ -13,5 +13,34 @@ export const Toc = () => {
         return () => tocbot.destroy();
     }, []);
 
-    return <div className="toc lg:sticky lg:top-0 pt-4"></div>;
+    return (
+        <>
+            <div className="toc pt-4"></div>{" "}
+            <style jsx global>{`
+                .toc {
+                    border-radius: 0.25rem;
+                    padding: 1rem;
+                    font-size: 1rem;
+                }
+
+                .toc-list .toc-list {
+                    padding-left: 1rem;
+                    padding-top: 0.5rem;
+                }
+
+                .toc-list-item {
+                    padding-bottom: 0.5rem;
+                }
+
+                .toc-list-item:last-child {
+                    padding-bottom: 0;
+                }
+
+                .toc-link {
+                    color: #282828;
+                    font-weight: 700;
+                }
+            `}</style>
+        </>
+    );
 };

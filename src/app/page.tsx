@@ -23,10 +23,7 @@ const Index = async () => {
                 <Paginate totalCount={allPostsLength} currentPage={1} />
             </div>
             <div className="col-span-9 lg:col-span-3 m-4">
-                <div>
-                    <h3 className="font-bold lg:text-2xl text-xl text-gray-900 border-b-2 border-black p-1">About</h3>
-                    <Profile />
-                </div>
+                <Profile />
             </div>
         </div>
     );

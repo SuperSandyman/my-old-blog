@@ -29,7 +29,6 @@
         "react-dom": "18.2.0",
         "react-emoji-render": "github:SuperSandyman/react-emoji-render",
         "react-icons": "^4.10.1",
-        "react-share": "^4.4.1",
         "rehype-prism-plus": "^1.6.3",
         "rehype-react": "^7.2.0",
         "rehype-slug": "^6.0.0",

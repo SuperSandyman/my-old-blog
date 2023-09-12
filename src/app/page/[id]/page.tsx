@@ -35,10 +35,7 @@ const Page = ({ params }: { params: { id: number } }) => {
                 <Paginate totalCount={allPostsLength} currentPage={params.id} />
             </div>
             <div className="col-span-9 lg:col-span-3 m-4">
-                <div>
-                    <h3 className="font-bold lg:text-2xl text-xl text-gray-900 border-b-2 border-black p-1">About</h3>
-                    <Profile />
-                </div>
+                <Profile />
             </div>
         </div>
     );
