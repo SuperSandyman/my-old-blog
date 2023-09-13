@@ -118,7 +118,7 @@ const PostPage = async ({ params }: { params: { slug: string } }) => {
                     <NextPrevPost slug={slug} />
                 </div>
             </div>
-            <div className="col-span-10 lg:col-span-3 ml-2">
+            <div className="col-span-10 lg:col-span-3 m-4">
                 <Profile />
                 <div className="lg:sticky lg:top-0 pt-4 hidden lg:block">
                     <h3 className="font-bold lg:text-2xl text-xl text-gray-900 border-b-2 border-black p-1">目次</h3>

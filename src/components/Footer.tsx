@@ -4,7 +4,7 @@ import { FaTwitter, FaYoutube, FaGithub } from "react-icons/fa";
 
 export const Footer = () => {
     return (
-        <footer className="text-gray-600 body-font mt-auto">
+        <footer className="text-gray-600 body-font mt-auto border-t">
             <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
                 <Link href="/">
                     <Image src="/static/logomark.png" alt="Sandyマンのブログ" height={35} width={200} />
