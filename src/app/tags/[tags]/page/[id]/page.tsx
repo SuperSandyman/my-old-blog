@@ -16,11 +16,20 @@ export const generateStaticParams = () => {
 
     const range = (start, end) => [...Array(end - start + 1)].map((_, i) => start + i);
 
-    return range(1, Math.ceil(filteredPosts.length / PER_PAGE))
-        .filter((id) => id !== 1) // 1以外の値だけを抽出
+    const filteredPages = range(1, Math.ceil(filteredPosts.length / PER_PAGE))
+        .filter((id) => id !== 1)
         .map((id) => ({
             id: id.toString(),
         }));
+
+    const tagsData = tags.map((tag) => ({
+        tag: tag,
+    }));
+
+    return {
+        id: filteredPages,
+        tags: tagsData,
+    };
 };
 
 export function generateMetadata({ params }: { params: { tags: string } }): Metadata {
