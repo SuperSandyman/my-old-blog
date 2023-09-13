@@ -7,6 +7,11 @@ import { decode } from "punycode";
 
 export const generateStaticParams = () => {
     const categories = Array.from(new Set(allPostsData.flatMap((post) => post.categories)));
+    // console.log(
+    //     categories.map((category) => {
+    //         return { categories: category };
+    //     })
+    // );
     return categories.map((category) => {
         return {
             categories: category,

@@ -5,31 +5,30 @@ import { CategoriesPaginate } from "@/components/CategoriesPaginate";
 import { Metadata } from "next";
 
 export const generateStaticParams = () => {
-    const categories = Array.from(new Set(allPostsData.flatMap((post) => post.categories)));
-    const decodedCategories = categories.map((category) => decodeURIComponent(category));
+    // カテゴリーを全て取得する
+    const allCategories = Array.from(new Set(allPostsData.flatMap((post) => post.categories)));
 
-    const filteredPosts = allPostsData.filter((post) => {
-        return post.categories.some((category) => decodedCategories.includes(category));
-    });
-
+    // ページネーションに使用する1ページあたりの記事数
     const PER_PAGE = 8;
 
-    const range = (start, end) => [...Array(end - start + 1)].map((_, i) => start + i);
+    // カテゴリーごとに処理を行う
+    const categoryParams = allCategories.flatMap((category) => {
+        // カテゴリーごとに関連する記事をフィルタリング
+        const filteredPosts = allPostsData.filter((post) => post.categories.includes(category));
 
-    const filteredPages = range(1, Math.ceil(filteredPosts.length / PER_PAGE))
-        .filter((id) => id !== 1)
-        .map((id) => ({
-            id: id.toString(),
-        }));
+        // 計算されたページ数を取得
+        const totalPages = Math.ceil(filteredPosts.length / PER_PAGE);
 
-    const categoriesData = categories.map((category) => ({
-        category: category,
-    }));
+        // ページ数が2以上の場合のみカテゴリーとページIDの組み合わせを生成
+        return totalPages >= 2
+            ? Array.from({ length: totalPages - 1 }, (_, index) => ({
+                  categories: category,
+                  id: (index + 2).toString(), // ページIDは2以上の自然数から
+              }))
+            : [];
+    });
 
-    return {
-        id: filteredPages,
-        categories: categoriesData,
-    };
+    return categoryParams;
 };
 
 export function generateMetadata({ params }: { params: { categories: string } }): Metadata {
