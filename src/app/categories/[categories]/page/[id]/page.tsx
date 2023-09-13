@@ -8,7 +8,6 @@ export const generateStaticParams = () => {
     // カテゴリーを全て取得する
     const allCategories = Array.from(new Set(allPostsData.flatMap((post) => post.categories)));
 
-    // ページネーションに使用する1ページあたりの記事数
     const PER_PAGE = 8;
 
     // カテゴリーごとに処理を行う
