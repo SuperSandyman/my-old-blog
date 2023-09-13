@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 
-export const Paginate = ({ totalCount, currentPage }) => {
+export const TagsPaginate = ({ totalCount, currentPage, tag }) => {
     const [inputPage, setInputPage] = useState("1");
     currentPage = Number(currentPage);
 
@@ -25,7 +25,7 @@ export const Paginate = ({ totalCount, currentPage }) => {
         <div className="flex justify-center mt-2">
             {currentPage > 1 && (
                 <Link
-                    href={currentPage === 2 ? "/" : `/page/${currentPage - 1}`}
+                    href={currentPage === 2 ? `/tags/${tag}` : `/tags/${tag}/page/${currentPage - 1}`}
                     className="text-xl  p-2 hover:underline"
                 >
                     &lt; Next
@@ -42,13 +42,13 @@ export const Paginate = ({ totalCount, currentPage }) => {
                         min="1"
                         max={totalPages}
                     />
-                    <Link href={`/page/` + inputPage} passHref>
+                    <Link href={`/tags/${tag}/page/` + inputPage} passHref>
                         <button className="lg:text-lg text-md hidden lg:block p-2 bg-gray-900 text-white hover:bg-gray-800 rounded-lg">{`${inputPage}ページまで遷移`}</button>
                     </Link>
                 </>
             )}
             {currentPage < totalPages && (
-                <Link href={`/page/${currentPage + 1}`} className="text-xl p-2 hover:underline">
+                <Link href={`/tags/${tag}/page/${currentPage + 1}`} className="text-xl p-2 hover:underline">
                     Prev &gt;
                 </Link>
             )}
