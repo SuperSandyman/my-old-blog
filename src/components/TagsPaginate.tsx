@@ -11,6 +11,8 @@ export const TagsPaginate = ({ totalCount, currentPage, tag }) => {
 
     const totalPages = Math.ceil(totalCount / PER_PAGE);
 
+    const decodedTags = decodeURIComponent(tag);
+
     const handleInputPageChange = (e) => {
         const value = e.target.value;
         if (value !== "") {
@@ -25,7 +27,7 @@ export const TagsPaginate = ({ totalCount, currentPage, tag }) => {
         <div className="flex justify-center mt-2">
             {currentPage > 1 && (
                 <Link
-                    href={currentPage === 2 ? `/tags/${tag}` : `/tags/${tag}/page/${currentPage - 1}`}
+                    href={currentPage === 2 ? `/tags/${decodedTags}` : `/tags/${decodedTags}/page/${currentPage - 1}`}
                     className="text-xl  p-2 hover:underline"
                 >
                     &lt; Next
@@ -42,13 +44,13 @@ export const TagsPaginate = ({ totalCount, currentPage, tag }) => {
                         min="1"
                         max={totalPages}
                     />
-                    <Link href={`/tags/${tag}/page/` + inputPage} passHref>
+                    <Link href={`/tags/${decodedTags}/page/` + inputPage} passHref>
                         <button className="lg:text-lg text-md hidden lg:block p-2 bg-gray-900 text-white hover:bg-gray-800 rounded-lg">{`${inputPage}ページまで遷移`}</button>
                     </Link>
                 </>
             )}
             {currentPage < totalPages && (
-                <Link href={`/tags/${tag}/page/${currentPage + 1}`} className="text-xl p-2 hover:underline">
+                <Link href={`/tags/${decodedTags}/page/${currentPage + 1}`} className="text-xl p-2 hover:underline">
                     Prev &gt;
                 </Link>
             )}
