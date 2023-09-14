@@ -6,7 +6,7 @@ import { FaYoutube, FaTwitter, FaGithub } from "react-icons/fa";
 export const Profile = () => {
     return (
         <div className="">
-            <h3 className="font-bold lg:text-2xl text-xl text-gray-900 border-b-2 border-black p-1">About</h3>
+            <h3 className="font-bold lg:text-2xl text-xl text-[#333333] border-b-2 border-black p-1">About</h3>
             <div className="bg-white p-4 rounded-lg border-b-2">
                 <div className="text-center">
                     <Image
@@ -40,7 +40,7 @@ export const Profile = () => {
                     </div>
                     <div className="pr-4">
                         <Link href="https://github.com/SuperSandyman" aria-label="SandyマンのGitHubへのリンクです">
-                            <FaGithub className="text-gray-900 h-5 w-5" />
+                            <FaGithub className="text-[#333333] h-5 w-5" />
                         </Link>
                     </div>
                 </div>

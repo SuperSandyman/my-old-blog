@@ -4,7 +4,7 @@ import Image from "next/image";
 export const Header = () => {
     return (
         <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center max-w-7xl">
-            <Link className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" href="/">
+            <Link className="flex title-font font-medium items-center text-[#333333] mb-4 md:mb-0" href="/">
                 <span className="ml-3 text-md">
                     <Image src="/static/logomark.png" alt="Sandyマンのブログ" height={35} width={200} />
                 </span>

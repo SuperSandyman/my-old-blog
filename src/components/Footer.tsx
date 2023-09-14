@@ -38,7 +38,7 @@ export const Footer = () => {
                     </div>
                     <div className="ml-3">
                         <Link href="https://github.com/SuperSandyman" aria-label="SandyマンのGitHubへのリンクです">
-                            <FaGithub className="text-gray-900 h-5 w-5" />
+                            <FaGithub className="text-[#333333] h-5 w-5" />
                         </Link>
                     </div>
                 </span>

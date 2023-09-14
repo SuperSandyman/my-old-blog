@@ -5,3 +5,7 @@
 .sm-toc {
     @apply lg:hidden block;
 }
+
+body p {
+    @apply text-[#333333];
+}

@@ -23,7 +23,7 @@ export const NextPrevPost = ({ slug }) => {
                     </div>
                     <div className="flex-wrap mx-4">
                         <Link href={"/posts/" + nextPost.id}>
-                            <h3 className="font-bold text-xl text-gray-900 break-all">{nextPost.title}</h3>
+                            <h3 className="font-bold text-xl text-[#333333] break-all">{nextPost.title}</h3>
                         </Link>
                         <div className="pt-1">
                             <time className="my-2 text-gray-700 text-[14px] font-semibold pr-2">
@@ -40,7 +40,7 @@ export const NextPrevPost = ({ slug }) => {
                     </div>
                     <div className="flex-wrap mx-4">
                         <Link href={"/posts/" + prevPost.id}>
-                            <h3 className="font-bold text-xl text-gray-900 break-all">{prevPost.title}</h3>
+                            <h3 className="font-bold text-xl text-[#333333] break-all">{prevPost.title}</h3>
                         </Link>
                         <div className="pt-1">
                             <time className="my-2 text-gray-700 text-[14px] font-semibold pr-2">

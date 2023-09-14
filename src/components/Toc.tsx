@@ -37,6 +37,10 @@ export const Toc = () => {
                 }
 
                 .toc-link {
+                    color: rgba(156, 163, 175, 0.7);
+                }
+
+                .is-active-link {
                     color: #282828;
                     font-weight: 700;
                 }

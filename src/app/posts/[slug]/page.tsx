@@ -10,6 +10,7 @@ import { Toc } from "@/components/Toc";
 import { ShareButtons } from "@/components/ShareButtons";
 import { Profile } from "@/components/SideBar/Profile";
 import "@/styles/prism.css";
+import "@/styles/posts.css";
 import { NextPrevPost } from "@/components/NextPrevPost";
 
 const baseURL = process.env.BASE_URL || "";
@@ -121,7 +122,7 @@ const PostPage = async ({ params }: { params: { slug: string } }) => {
             <div className="col-span-10 lg:col-span-3 m-4">
                 <Profile />
                 <div className="lg:sticky lg:top-0 pt-4 hidden lg:block">
-                    <h3 className="font-bold lg:text-2xl text-xl text-gray-900 border-b-2 border-black p-1">目次</h3>
+                    <h3 className="font-bold lg:text-2xl text-xl text-[#333333] border-b-2 border-black p-1">目次</h3>
                     <Toc />
                 </div>
             </div>

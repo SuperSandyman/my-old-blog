@@ -56,7 +56,7 @@ const CategoriesPage = ({ params }: { params: { categories: string } }) => {
     return (
         <div className="grid grid-cols-9 lg:gap-4">
             <div className="col-span-9 lg:col-span-6">
-                <h1 className="font-bold text-4xl text-gray-900 border-b-2 border-black py-2">
+                <h1 className="font-bold text-4xl text-[#333333] border-b-2 border-black py-2">
                     <span className="m-2 block">
                         「{decodedCategories}」がついている記事（{postCount}件）
                     </span>

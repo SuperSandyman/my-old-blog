@@ -5,6 +5,9 @@ import { Noto_Sans_JP } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
+import { Suspense } from "react";
+import { GoogleAnalyticsScript } from "@/lib/gtag";
+
 const baseURL = process.env.NEXT_PUBLIC_BASE_URL;
 
 const noto = Noto_Sans_JP({
@@ -14,6 +17,7 @@ const noto = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
+    metadataBase: new URL(baseURL ?? "http://localhost:3000"),
     title: "Sandyマンのブログ",
     description: "JavaScriptやLinuxなどいろいろ記事書いてます",
     openGraph: {
@@ -37,6 +41,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="ja">
+            <head>
+                <Suspense fallback={null}>
+                    <GoogleAnalyticsScript />
+                </Suspense>
+            </head>
             <body className={noto.className}>
                 <div className="flex flex-col min-h-screen">
                     <header className="w-max-full shadow-sm bg-white">

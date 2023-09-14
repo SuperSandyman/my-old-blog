@@ -16,7 +16,7 @@ export const PostList = ({ post }: { post: PostData }) => {
                 </div>
                 <div className="flex-wrap mx-4">
                     <Link href={"/posts/" + post.id}>
-                        <h3 className="font-bold lg:text-2xl text-xl text-gray-900 break-all">{post.title}</h3>
+                        <h3 className="font-bold lg:text-2xl text-xl text-[#333333] break-all">{post.title}</h3>
                     </Link>
                     <div className="pt-1">
                         <time className="my-2 text-gray-700 text-[14px] font-semibold pr-2">
