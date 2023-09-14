@@ -4,7 +4,6 @@ import { Noto_Sans_JP } from "next/font/google";
 
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import GoogleAnalytics from "./Googleanalytics";
 
 const baseURL = process.env.NEXT_PUBLIC_BASE_URL;
 
@@ -27,6 +26,7 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
+        images: "/opengraph-image.png",
         title: "Sandyマンのブログ",
         site: "@sandyman_blog",
         creator: "@sandyman_linux",
@@ -37,7 +37,6 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="ja">
-            <GoogleAnalytics />
             <body className={noto.className}>
                 <div className="flex flex-col min-h-screen">
                     <header className="w-max-full shadow-sm bg-white">
