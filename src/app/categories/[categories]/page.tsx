@@ -3,7 +3,6 @@ import { PostList } from "@/components/PostList";
 import { Metadata } from "next";
 import { SideBar } from "@/components/SideBar/SideBar";
 import { CategoriesPaginate } from "@/components/CategoriesPaginate";
-import { decode } from "punycode";
 
 export const generateStaticParams = () => {
     const categories = Array.from(new Set(allPostsData.flatMap((post) => post.categories)));
