@@ -46,6 +46,7 @@
     },
     "devDependencies": {
         "@tailwindcss/typography": "^0.5.9",
+        "@types/gtag.js": "^0.0.13",
         "@types/rss": "^0.0.30",
         "autoprefixer": "^10.4.14",
         "next-export-optimize-images": "^3.1.1",
