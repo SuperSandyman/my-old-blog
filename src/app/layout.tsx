@@ -17,7 +17,7 @@ const noto = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-    metadataBase: new URL(`${baseURL}`),
+    metadataBase: new URL("https://www.sandyman.dev"),
     title: "Sandyマンのブログ",
     description: "JavaScriptやLinuxなどいろいろ記事書いてます",
     openGraph: {
