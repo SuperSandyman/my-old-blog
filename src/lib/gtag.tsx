@@ -1,44 +1,35 @@
 "use client";
 
-import { usePathname, useSearchParams } from "next/navigation";
-import { useEffect } from "react";
-import { GA_TRACKING_ID } from "@/lib/contant";
+import Script from "next/script";
 
-// https://developers.google.com/analytics/devguides/collection/gtagjs/pages
-const pageview = (url: string) => {
-    if (!GA_TRACKING_ID) return;
-    window.gtag("config", GA_TRACKING_ID, {
-        page_path: url,
-    });
-};
+// サーバーの環境変数で Google Analytics の測定 ID を指定します
+const ANALYTICS_ID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
+// あるいはハードコーディングでも可
+// const ANALYTICS_ID = 'G-ABCDE12345'
 
-type GTagEvent = {
-    action: string;
-    category: string;
-    label: string;
-    value: number;
-};
+/** Google Analytics によるアクセス解析を行うためのコンポーネント */
+export const Analytics = () => {
+    if (process.env.NODE_ENV !== "production") {
+        // 開発サーバー上での実行 (next dev) では何も出力しない
+        return <></>;
+    }
 
-export const useGoogleAnalytics = () => {
-    const pathname = usePathname();
-    const searchParams = useSearchParams();
+    if (!ANALYTICS_ID) {
+        console.warn("NEXT_PUBLIC_ANALYTICS_ID not defined");
+        return <></>;
+    }
 
-    useEffect(() => {
-        if (process.env.NODE_ENV !== "production") return;
-
-        const path = pathname ?? "";
-        const qs = searchParams?.toString();
-
-        const url = qs ? `${path}?${qs}` : path;
-
-        pageview(url);
-    }, [pathname, searchParams]);
-};
-
-export const GoogleAnalyticsScript: React.FC = () => {
-    useGoogleAnalytics();
-
-    if (!GA_TRACKING_ID) return null;
-
-    return null;
+    return (
+        <>
+            <Script src="https://www.googletagmanager.com/gtag/js?id=${ANALYTICS_ID}" strategy="afterInteractive" />
+            <Script id="google-analytics" strategy="afterInteractive">
+                {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${ANALYTICS_ID}');
+        `}
+            </Script>
+        </>
+    );
 };
