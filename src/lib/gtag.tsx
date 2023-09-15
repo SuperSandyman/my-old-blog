@@ -2,9 +2,9 @@
 
 import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
+import { GA_TRACKING_ID } from "@/lib/contant";
 
-const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
-
+// https://developers.google.com/analytics/devguides/collection/gtagjs/pages
 const pageview = (url: string) => {
     if (!GA_TRACKING_ID) return;
     window.gtag("config", GA_TRACKING_ID, {
@@ -12,12 +12,12 @@ const pageview = (url: string) => {
     });
 };
 
-// type GTagEvent = {
-//     action: string;
-//     category: string;
-//     label: string;
-//     value: number;
-// };
+type GTagEvent = {
+    action: string;
+    category: string;
+    label: string;
+    value: number;
+};
 
 export const useGoogleAnalytics = () => {
     const pathname = usePathname();
