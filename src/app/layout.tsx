@@ -6,7 +6,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 import { Suspense } from "react";
-import { Analytics } from "@/lib/gtag";
+import { GoogleAnalyticsScript } from "@/lib/gtag";
 
 const baseURL = process.env.NEXT_PUBLIC_BASE_URL;
 
@@ -43,7 +43,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <html lang="ja">
             <head>
                 <Suspense fallback={null}>
-                    <Analytics />
+                    <GoogleAnalyticsScript />
                 </Suspense>
             </head>
             <body className={noto.className}>
