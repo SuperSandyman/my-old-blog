@@ -26,11 +26,11 @@ export const metadata: Metadata = {
         description: "JavaScriptやLinuxなどいろいろ記事書いてます",
         type: "website",
         locale: "ja_JP",
-        images: "/opengraph-image.png",
+        images: "opengraph-image.png",
     },
     twitter: {
         card: "summary_large_image",
-        images: "/opengraph-image.png",
+        images: "opengraph-image.png",
         title: "Sandyマンのブログ",
         site: "@sandyman_blog",
         creator: "@sandyman_linux",
