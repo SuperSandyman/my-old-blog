@@ -4,7 +4,6 @@ import Script from "next/script";
 
 // サーバーの環境変数で Google Analytics の測定 ID を指定します
 const ANALYTICS_ID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
-console.log(ANALYTICS_ID);
 // あるいはハードコーディングでも可
 // const ANALYTICS_ID = 'G-ABCDE12345'
 
