@@ -2,7 +2,7 @@ import Rss from "rss";
 import { allPostsData } from "@/lib/api";
 import urlJoin from "url-join";
 
-const baseURL = process.env.BASE_URL || "";
+const baseURL = process.env.NEXT_PUBLIC_BASE_URL || "";
 
 export async function GET() {
     const feed = new Rss({

@@ -2,12 +2,13 @@ import { MetadataRoute } from "next";
 import { allPostsData } from "@/lib/api";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-    const baseURL = process.env.BASE_URL || "";
+    const baseURL = process.env.NEXT_PUBLIC_BASE_URL || "";
     const lastModified = new Date();
 
     const staticPaths = [
         {
             url: baseURL,
+            title: "Sandyマンのブログ",
             lastModified,
         },
     ];
