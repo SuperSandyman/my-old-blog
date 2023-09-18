@@ -16,3 +16,7 @@
 .prose strong {
     background: linear-gradient(transparent 60%, #ffff66 60%);
 }
+
+.prose p code {
+    background: #f4f4f4;
+}
