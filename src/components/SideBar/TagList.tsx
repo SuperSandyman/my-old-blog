@@ -5,7 +5,7 @@ export const TagList = () => {
     const tags = Array.from(new Set(allPostsData.flatMap((post) => post.tags)));
 
     return (
-        <div className="border-b-2">
+        <div className="">
             <h3 className="font-bold lg:text-2xl text-xl text-[#333333] border-b-2 border-black p-1 pt-4">Tags</h3>
             <ul className="flex flex-wrap px-4 my-2">
                 {tags.slice(0, 30).map((tag, index) => (
