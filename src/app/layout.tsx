@@ -11,8 +11,6 @@ import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 const baseURL = process.env.NEXT_PUBLIC_BASE_URL;
 
 const noto = Noto_Sans_JP({
-    weight: ["400", "700"],
-    style: "normal",
     subsets: ["latin"],
 });
 
