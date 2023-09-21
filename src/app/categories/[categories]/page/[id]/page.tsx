@@ -4,7 +4,7 @@ import { SideBar } from "@/components/SideBar/SideBar";
 import { CategoriesPaginate } from "@/components/CategoriesPaginate";
 import { Metadata } from "next";
 
-export const generateStaticParams = () => {
+export const generateStaticParams = async () => {
     // カテゴリーを全て取得する
     const allCategories = Array.from(new Set(allPostsData.flatMap((post) => post.categories)));
 
