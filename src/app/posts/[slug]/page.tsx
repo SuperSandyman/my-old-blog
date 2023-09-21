@@ -15,7 +15,7 @@ import { NextPrevPost } from "@/components/NextPrevPost";
 
 const baseURL = process.env.BASE_URL || "";
 
-export const generateStaticParams = async () => {
+export const generateStaticParams = () => {
     return allPostsData.map((post) => {
         return {
             slug: post.id,
