@@ -1,0 +1,15 @@
+.toc {
+    @apply px-2;
+}
+
+.toc-list-item {
+    @apply py-1 text-gray-500;
+}
+
+.toc-list-item .toc-list {
+    @apply pt-1 pl-3;
+}
+
+.is-active-link {
+    @apply text-gray-950 font-bold;
+}

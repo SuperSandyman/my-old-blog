@@ -3,6 +3,8 @@
 import { useEffect } from "react";
 import tocbot from "tocbot";
 
+import "@/styles/toc.css";
+
 export const Toc = () => {
     useEffect(() => {
         tocbot.init({
@@ -13,38 +15,5 @@ export const Toc = () => {
         return () => tocbot.destroy();
     }, []);
 
-    return (
-        <>
-            <div className="toc pt-4"></div>{" "}
-            <style jsx global>{`
-                .toc {
-                    border-radius: 0.25rem;
-                    padding: 1rem;
-                    font-size: 1rem;
-                }
-
-                .toc-list .toc-list {
-                    padding-left: 1rem;
-                    padding-top: 0.5rem;
-                }
-
-                .toc-list-item {
-                    padding-bottom: 0.5rem;
-                }
-
-                .toc-list-item:last-child {
-                    padding-bottom: 0;
-                }
-
-                .toc-link {
-                    color: rgba(156, 163, 175, 0.7);
-                }
-
-                .is-active-link {
-                    color: #282828;
-                    font-weight: 700;
-                }
-            `}</style>
-        </>
-    );
+    return <div className="toc pt-4"></div>;
 };
