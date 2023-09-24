@@ -58,7 +58,7 @@ const PostPage = async ({ params }: { params: { slug: string } }) => {
     const post = await getPostById(slug);
 
     if (!post) {
-        return <div className="font-extrabold text-4xl p-20">{"404でござる:)"}</div>;
+        return <div className="font-extrabold text-4xl p-20">{"404でござるっ:)"}</div>;
     }
 
     const content = await markdownToReact(post.content, post.id);
