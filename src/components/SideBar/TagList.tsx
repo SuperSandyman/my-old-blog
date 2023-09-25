@@ -11,7 +11,7 @@ export const TagList = () => {
                 {tags.slice(0, 30).map((tag, index) => (
                     <li className="p-1" key={index}>
                         <Link href={`/tags/` + tag + `/`} itemProp="url">
-                            <button className="px-2 mb-1 mr-0.5 text-[#333333] rounded-lg text-lg">
+                            <button className="px-2 mb-1 mr-0.5 text-[#333333] rounded-lg text-lg hover:undreline">
                                 <div className="flex">
                                     <span>#{tag}</span>
                                 </div>
