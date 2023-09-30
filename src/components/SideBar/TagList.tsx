@@ -9,11 +9,11 @@ export const TagList = () => {
             <h3 className="font-bold lg:text-2xl text-xl text-[#333333] border-b-2 border-black p-1 pt-4">Tags</h3>
             <ul className="flex flex-wrap px-4 my-2">
                 {tags.slice(0, 30).map((tag, index) => (
-                    <li className="p-1 hover:underline" key={index}>
+                    <li className="p-1" key={index}>
                         <Link href={`/tags/` + tag + `/`} itemProp="url">
                             <button className="px-2 mb-1 mr-0.5 text-[#333333] rounded-lg text-lg">
                                 <div className="flex">
-                                    <span>#{tag}</span>
+                                    <span className="hover:underline">#{tag}</span>
                                 </div>
                             </button>
                         </Link>
