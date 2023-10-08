@@ -1,14 +1,17 @@
 import "../styles/globals.css";
 import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
+import Script from "next/script";
 
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 import { Suspense } from "react";
-import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import { GoogleAnalyticsScript } from "@/lib/gtag";
 
 const baseURL = process.env.NEXT_PUBLIC_BASE_URL;
+
+const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
 
 const noto = Noto_Sans_JP({
     weight: ["400", "700"],
@@ -42,8 +45,27 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     return (
         <html lang="ja">
             <head>
+                <Script
+                    strategy="afterInteractive"
+                    src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+                />
+                {/* eslint-disable-next-line @next/next/no-before-interactive-script-outside-document */}
+                <Script
+                    id="gtag-init"
+                    strategy="beforeInteractive"
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                            window.dataLayer = window.dataLayer || [];
+                            function gtag(){dataLayer.push(arguments);}
+                            gtag('js', new Date());
+                            gtag('config', '${GA_TRACKING_ID}', {
+                                page_path: window.location.pathname,
+                            });
+                            `,
+                    }}
+                />
                 <Suspense fallback={null}>
-                    <GoogleAnalytics />
+                    <GoogleAnalyticsScript />
                 </Suspense>
             </head>
             <body className={noto.className}>
