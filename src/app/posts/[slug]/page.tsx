@@ -34,7 +34,6 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
 
     return {
         title: post.title + " | Sandyマンのブログ",
-        description: post.content.substring(0, 80),
         openGraph: {
             url: urlJoin(baseURL, "/posts/", post.id),
             title: post.title + " | Sandyマンのブログ",
