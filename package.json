@@ -9,11 +9,11 @@
         "build": "npm run post_sync && npm run copyimages && next build && next-export-optimize-images",
         "start": "npm run post_sync && npm run copyimages && next start",
         "lint": "next lint",
-        "copyimages": "node ./src/lib/copy-images.mjs"
+        "copyimages": "node ./src/lib/copy-images.mjs",
+        "analyze-bundle": "ANALYZE=true next build"
     },
     "dependencies": {
         "@jsdevtools/rehype-toc": "^3.0.2",
-        "@next/bundle-analyzer": "^13.4.16",
         "@types/fs-extra": "^11.0.1",
         "@types/node": "20.4.5",
         "@types/react": "18.2.17",
@@ -42,6 +42,7 @@
         "url-join": "^5.0.0"
     },
     "devDependencies": {
+        "@next/bundle-analyzer": "^13.5.4",
         "@tailwindcss/typography": "^0.5.9",
         "@types/gtag.js": "^0.0.13",
         "@types/rss": "^0.0.30",
