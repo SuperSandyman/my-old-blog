@@ -17,7 +17,7 @@ export const NextPrevPost = ({ slug }) => {
     return (
         <div className="md:flex">
             {nextPost && (
-                <div className="flex my-4 ml-4 mr-2 md:pb-0 pb-4 md:border-r-2 w-[50%]">
+                <div className="flex my-4 ml-4 mr-2 md:pb-0 pb-4 md:border-r-2 md:w-[50%]">
                     <div className="bg-[#F4F4F4] p-4 w-[70px] h-[70px] lg:w-[100px] lg:h-[100px] flex-shrink-0 rounded-lg items-center">
                         <Twemoji svg text={nextPost.emoji || "💻"} />
                     </div>
@@ -34,7 +34,7 @@ export const NextPrevPost = ({ slug }) => {
                 </div>
             )}
             {prevPost && (
-                <div className="flex my-4 ml-2 mr-4 w-[50%]">
+                <div className="flex my-4 ml-2 mr-4 md:w-[50%]">
                     <div className="bg-[#F4F4F4] p-4 w-[70px] h-[70px] lg:w-[100px] lg:h-[100px] flex-shrink-0 rounded-lg items-center">
                         <Twemoji svg text={prevPost.emoji || "💻"} />
                     </div>
