@@ -35,7 +35,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
     return {
         title: post.title + " | Sandyマンのブログ",
         openGraph: {
-            url: urlJoin(baseURL, "/posts/", post.id),
+            url: urlJoin(baseURL, "posts/", post.id, "/"),
             title: post.title + " | Sandyマンのブログ",
             description: post.content.substring(0, 80),
             type: "article",
@@ -101,7 +101,7 @@ const PostPage = async ({ params }: { params: { slug: string } }) => {
                                         <Link
                                             key={tag}
                                             className="text-gray-600 pr-1.5 hover:underline"
-                                            href={`/tags/${tag}`}
+                                            href={`/tags/${tag}/`}
                                         >
                                             #{tag}
                                         </Link>

@@ -24,7 +24,7 @@ export const Profile = () => {
                 <div className="px-4 py-2 flex justify-center">
                     <div className="pr-4">
                         <Link
-                            href="https://twitter.com/sandyman_blog"
+                            href="https://twitter.com/sandyman_blog/"
                             aria-label="Twitter（@sandyman_blog）へのリンクです"
                         >
                             <FaTwitter className="text-blue-500 h-5 w-5" />
@@ -32,14 +32,14 @@ export const Profile = () => {
                     </div>
                     <div className="pr-4">
                         <Link
-                            href="https://www.youtube.com/@sandyman_linux"
+                            href="https://www.youtube.com/@sandyman_linux/"
                             aria-label="Youtube（SandyマンのPC部）へのリンクです"
                         >
                             <FaYoutube className="text-red-500 h-5 w-5" />
                         </Link>
                     </div>
                     <div className="pr-4">
-                        <Link href="https://github.com/SuperSandyman" aria-label="SandyマンのGitHubへのリンクです">
+                        <Link href="https://github.com/SuperSandyman/" aria-label="SandyマンのGitHubへのリンクです">
                             <FaGithub className="text-[#333333] h-5 w-5" />
                         </Link>
                     </div>

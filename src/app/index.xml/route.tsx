@@ -8,7 +8,7 @@ export async function GET() {
     const feed = new Rss({
         title: "Sandyマンのブログ",
         description: "JavaScriptやLinuxなどいろいろ記事書いてます",
-        feed_url: urlJoin(baseURL, "/index.xml"),
+        feed_url: urlJoin(baseURL, "index.xml"),
         site_url: baseURL,
         language: "ja",
     });
@@ -17,7 +17,7 @@ export async function GET() {
         feed.item({
             title: post.title,
             description: post.content.substring(0, 80),
-            url: urlJoin(baseURL, "/posts/", post.id),
+            url: urlJoin(baseURL, "posts/", post.id, "/"),
             date: post.date,
         });
     });

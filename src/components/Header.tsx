@@ -10,22 +10,22 @@ export const Header = () => {
                 </span>
             </Link>
             <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center font-semibold">
-                <Link href="/tags">
+                <Link href="/tags/">
                     <p className="mr-5 hover:text-gray-700" title="Tags">
                         Tags
                     </p>
                 </Link>
-                <Link href="/categories">
+                <Link href="/categories/">
                     <p className="mr-5 hover:text-gray-700" title="Categories">
                         Categories
                     </p>
                 </Link>
-                <Link href="/posts/profile">
+                <Link href="/posts/profile/">
                     <p className="mr-5 hover:text-gray-700" title="About">
                         About
                     </p>
                 </Link>
-                <Link href="https://zenn.dev/sandyman">
+                <Link href="https://zenn.dev/sandyman/">
                     <Image src="/static/zenn.png" alt="Zenn" width={80} height={20} />
                 </Link>
             </nav>

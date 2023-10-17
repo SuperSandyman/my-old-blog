@@ -30,7 +30,7 @@ export const CategoriesPaginate = ({ totalCount, currentPage, category }) => {
                     href={
                         currentPage === 2
                             ? `/categories/${decodedCategory}`
-                            : `/categories/${decodedCategory}/page/${currentPage - 1}`
+                            : `/categories/${decodedCategory}/page/${currentPage - 1}/`
                     }
                     className="text-xl  p-2 hover:underline"
                 >
@@ -48,14 +48,14 @@ export const CategoriesPaginate = ({ totalCount, currentPage, category }) => {
                         min="1"
                         max={totalPages}
                     />
-                    <Link href={`/categories/${decodedCategory}/page/` + inputPage} passHref>
+                    <Link href={`/categories/${decodedCategory}/page/` + inputPage + `/`} passHref>
                         <button className="lg:text-lg text-md hidden lg:block p-2 bg-gray-900 text-white hover:bg-gray-800 rounded-lg">{`${inputPage}ページまで遷移`}</button>
                     </Link>
                 </>
             )}
             {currentPage < totalPages && (
                 <Link
-                    href={`/categories/${decodedCategory}/page/${currentPage + 1}`}
+                    href={`/categories/${decodedCategory}/page/${currentPage + 1}/`}
                     className="text-xl p-2 hover:underline"
                 >
                     Prev &gt;

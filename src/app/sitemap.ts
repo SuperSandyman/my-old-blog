@@ -15,7 +15,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
     const dynamicPaths = allPostsData.map((post) => {
         return {
-            url: `${baseURL}/posts/${post.id}`,
+            url: `${baseURL}posts/${post.id}/`,
             lastModified,
         };
     });

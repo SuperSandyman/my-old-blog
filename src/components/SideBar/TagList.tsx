@@ -21,7 +21,7 @@ export const TagList = () => {
                 ))}
             </ul>
             <div className="text-center">
-                <Link href="/tags">
+                <Link href="/tags/">
                     <button className="px-4 py-2 mt-2 mb-4 bg-gray-900 text-white hover:bg-gray-800 rounded-lg">
                         もっと見る
                     </button>
