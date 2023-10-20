@@ -47,7 +47,7 @@ export const TagsPaginate = ({ totalCount, currentPage, tag }) => {
                     <Link
                         href={
                             Number(inputPage) === 1
-                                ? `/categories/${decodedTags}/`
+                                ? `/tags/${decodedTags}/`
                                 : `/tags/${decodedTags}/page/` + inputPage + "/"
                         }
                         passHref
