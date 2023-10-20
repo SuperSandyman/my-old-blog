@@ -31,7 +31,7 @@ export const Paginate = ({ totalCount, currentPage }) => {
                     &lt; Next
                 </Link>
             )}
-            {totalPages > 1 && ( // 1ページしかない場合は非表示
+            {totalPages > 1 && (
                 <>
                     <input
                         type="number"
@@ -42,11 +42,14 @@ export const Paginate = ({ totalCount, currentPage }) => {
                         min="1"
                         max={totalPages}
                     />
-                    <Link href={`/page/` + inputPage} passHref>
-                        <button className="lg:text-lg text-md hidden lg:block p-2 bg-gray-900 text-white hover:bg-gray-800 rounded-lg">{`${inputPage}ページまで遷移`}</button>
+                    <Link href={Number(inputPage) === 1 ? `/` : `/page/${inputPage}`} passHref>
+                        <button className="lg:text-lg text-md hidden lg:block p-2 bg-gray-900 text-white hover:bg-gray-800 rounded-lg">
+                            {`${inputPage}ページまで遷移`}
+                        </button>
                     </Link>
                 </>
             )}
+
             {currentPage < totalPages && (
                 <Link href={`/page/${currentPage + 1}`} className="text-xl p-2 hover:underline">
                     Prev &gt;

@@ -44,7 +44,14 @@ export const TagsPaginate = ({ totalCount, currentPage, tag }) => {
                         min="1"
                         max={totalPages}
                     />
-                    <Link href={`/tags/${decodedTags}/page/` + inputPage + "/"} passHref>
+                    <Link
+                        href={
+                            Number(inputPage) === 1
+                                ? `/categories/${decodedTags}/`
+                                : `/tags/${decodedTags}/page/` + inputPage + "/"
+                        }
+                        passHref
+                    >
                         <button className="lg:text-lg text-md hidden lg:block p-2 bg-gray-900 text-white hover:bg-gray-800 rounded-lg">{`${inputPage}ページまで遷移`}</button>
                     </Link>
                 </>
