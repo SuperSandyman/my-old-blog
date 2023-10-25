@@ -1,12 +1,12 @@
 import { FaTwitter, FaGithub } from "react-icons/fa";
 
-export const ShareButtons = ({ title, slug }) => {
+export const ShareButtons = ({ title, slug, category }) => {
     return (
         <div>
             <button className=" bg-[#1da1f2] hover:bg-blue-400 py-2 px-4 mr-2 rounded-lg inline-flex items-center">
                 <FaTwitter className="text-white mr-2" />
                 <a
-                    href={`https://twitter.com/intent/tweet?text=${title} | Sandyマンのブログ https://www.sandyman.dev/posts/${slug}`}
+                    href={`https://twitter.com/intent/tweet?url=https://www.sandyman.dev/posts/${slug}&text=${title}｜Sandyマンのブログ&hashtags=${category}`}
                     className="text-white font-bold"
                 >
                     Twitterでシェア！

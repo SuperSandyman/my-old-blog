@@ -113,7 +113,7 @@ const PostPage = async ({ params }: { params: { slug: string } }) => {
                 <div>
                     <article className="prose border-t-2 lg:pt-4 mb-10">{content}</article>
                     <div className="flex mb-4 border-b-2 pb-8">
-                        <ShareButtons title={post.title} slug={post.id} />
+                        <ShareButtons title={post.title} slug={post.id} category={post.categories} />
                     </div>
                     <NextPrevPost slug={slug} />
                 </div>
