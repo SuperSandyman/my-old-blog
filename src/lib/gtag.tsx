@@ -15,12 +15,12 @@ const pageview = (url: string) => {
     });
 };
 
-type GTagEvent = {
-    action: string;
-    category: string;
-    label: string;
-    value: number;
-};
+// type GTagEvent = {
+//     action: string;
+//     category: string;
+//     label: string;
+//     value: number;
+// };
 
 export const useGoogleAnalytics = () => {
     const pathname = usePathname();

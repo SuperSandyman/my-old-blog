@@ -1,8 +1,6 @@
 import { allPostsData, allPostsLength } from "@/lib/api";
 import { PostList } from "@/components/PostList";
-import { Profile } from "@/components/SideBar/Profile";
 import { Paginate } from "@/components/Paginate";
-import { TagList } from "@/components/SideBar/TagList";
 import { SideBar } from "@/components/SideBar/SideBar";
 
 const Index = async () => {

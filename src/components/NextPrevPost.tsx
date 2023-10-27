@@ -40,7 +40,7 @@ export const NextPrevPost = ({ slug }) => {
                             <h3 className="font-bold text-xl text-[#333333] break-all">{prevPost.title}</h3>
                         </Link>
                         <div className="pt-1 text-right">
-                            <time className="my-2 text-gray-700 text-[14px] font-semibold">
+                            <time className="my-2 text-gray-700 text-[14px] font-semibold pr-2">
                                 {format(parseISO(prevPost.date), "yyyy.MM.dd")}
                             </time>
                         </div>
