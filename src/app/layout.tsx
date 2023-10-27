@@ -44,13 +44,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="ja">
-            {/* <head>
+            <head>
                 <Script
                     strategy="afterInteractive"
                     src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-                /> */}
-            {/* eslint-disable-next-line @next/next/no-before-interactive-script-outside-document */}
-            {/* <Script
+                />
+                {/* eslint-disable-next-line @next/next/no-before-interactive-script-outside-document */}
+                <Script
                     id="gtag-init"
                     strategy="beforeInteractive"
                     dangerouslySetInnerHTML={{
@@ -67,7 +67,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <Suspense fallback={null}>
                     <GoogleAnalyticsScript />
                 </Suspense>
-            </head> */}
+            </head>
             <body className={noto.className}>
                 <div className="flex flex-col min-h-screen">
                     <header className="w-max-full shadow-sm bg-white">
